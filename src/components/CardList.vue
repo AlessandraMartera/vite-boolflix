@@ -12,7 +12,27 @@ export default {
     <h1>Movie:</h1>
     <ul>
         <li v-for="cardMovie in store.cardListMovie">
-            {{ cardMovie.title }}
+            <!-- title -->
+            <div>
+                {{ cardMovie.title }}
+            </div>
+
+            <!-- original title -->
+            <div>
+                {{ cardMovie.original_title }}
+            </div>
+
+            <!-- lenguage -->
+            <div>
+                {{ cardMovie.original_language }}
+            </div>
+
+            <!-- vote -->
+            <div>
+                {{ cardMovie.vote_average }}
+            </div>
+
+
         </li>
 
     </ul>
@@ -20,7 +40,25 @@ export default {
     <h1>SerieTv:</h1>
     <ul>
         <li v-for="cardTv in store.cardListTv">
-            {{ cardTv.name }}
+            <!-- title -->
+            <div>
+                {{ cardTv.name }}
+            </div>
+
+            <!-- original title -->
+            <div>
+                {{ cardTv.original_name }}
+            </div>
+
+            <!-- lenguage -->
+            <div>
+                {{ cardTv.original_language }}
+            </div>
+
+            <!-- vote -->
+            <div>
+                {{ cardTv.vote_average }}
+            </div>
         </li>
 
     </ul>

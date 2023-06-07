@@ -2,20 +2,21 @@
 import axios from 'axios'
 import { store } from './store.js'
 import AppHeader from './components/AppHeader.vue'
-import AppSearch from './components/AppSearch.vue'
 import CardList from './components/cardList.vue'
+import AppSearch from './components/AppSearch.vue'
 
 export default {
   components: {
     AppHeader,
-    CardList
+    AppSearch,
+    CardList,
   },
 
   // star data
   data() {
     return {
       store
-    }
+    };
   },
 
   // start methods
@@ -37,18 +38,20 @@ export default {
           console.log(store.cardListTv);
         }
         )
+    },
+    getCards() {
+      this.getInfoMovie();
+      this.getInfoTv();
     }
   },
   created() {
-    this.getInfoMovie();
-    this.getInfoTv();
+    this.getCards();
   }
-
 }
 </script>
 
 <template>
-  <AppHeader />
+  <AppHeader @search="getCards" />
   <main>
     <CardList />
   </main>

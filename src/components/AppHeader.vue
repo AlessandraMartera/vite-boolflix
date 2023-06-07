@@ -1,19 +1,27 @@
 <script>
 import AppSearch from './AppSearch.vue';
+import { store } from './../store'
 
 export default {
   name: "AppHeader",
-  components: { AppSearch }
-}
+  components: {
+    AppSearch
+  },
+  data() {
+    return {
+      store
+    };
+  }
+};
 </script>
 
 <template>
   <header>
     <h1>BoolFlix</h1>
     <div>
-      <AppSearch />
+      <input type="text" v-model="store.titleSearched" @keyup.enter="$emit('search')">
+      <button type="submit" @click.prevent="$emit('search')"> cerca </button>
     </div>
-
   </header>
 </template>
 
