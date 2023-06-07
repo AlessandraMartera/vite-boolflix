@@ -21,17 +21,27 @@ export default {
   // start methods
   methods: {
     getInfoMovie() {
-      let searchUrl = store.apiUrlMovie + store.titleSearched;
-      axios.get(searchUrl)
+      let searchUrlMovie = store.apiUrlMovie + store.titleSearched;
+      axios.get(searchUrlMovie)
         .then(ref => {
-          store.cardList = ref.data.results;
-          console.log(store.cardList);
+          store.cardListMovie = ref.data.results;
+          console.log(store.cardListMovie);
+        }
+        )
+    },
+    getInfoTv() {
+      let searchUrlTv = store.apiUrlTv + store.titleSearched;
+      axios.get(searchUrlTv)
+        .then(ref => {
+          store.cardListTv = ref.data.results;
+          console.log(store.cardListTv);
         }
         )
     }
   },
   created() {
     this.getInfoMovie();
+    this.getInfoTv();
   }
 
 }
