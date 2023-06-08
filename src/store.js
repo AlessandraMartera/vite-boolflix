@@ -9,5 +9,6 @@ export const store = reactive({
     titleSearched: 'ritorno al futuro',
     movieList: [],
     tvList: [],
-    cardList: []
+    cardList: [],
+    thumbImg: 'https://image.tmdb.org/t/p/w342'
 });

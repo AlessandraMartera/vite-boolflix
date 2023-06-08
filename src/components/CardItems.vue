@@ -21,6 +21,10 @@ export default {
 
 <template>
     <li>
+        <div>
+            <img :src="`${store.thumbImg}${details.backdrop_path}`" :alt="`motion picture ${details.title}${details.name}`">
+        </div>
+
         <div v-if="(store.movieList.includes(details))">
             <!-- title -->
             <div>
@@ -46,13 +50,13 @@ export default {
         </div>
 
         <!-- language -->
-        <div class=" language">
-            <img :src="`./../../public/language/${details.original_language}.jpg`" :alt="details.original_language">
+        <div class="language">
+            <img :src="`language/${details.original_language}.jpg`" :alt="details.original_language">
 
         </div>
         <!-- ${details.original_language} -->
         <!-- vote -->
-        <div>
+        <div class="ratings">
             {{ details.vote_average }}
         </div>
 
