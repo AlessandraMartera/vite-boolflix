@@ -6,6 +6,7 @@ export const store = reactive({
     apiUrlTv: 'https://api.themoviedb.org/3/search/tv?api_key=4354bdc1164accce56e509efe2a30375&query=',
 
     // variables to search
-    titleSearched: '',
+    titleSearched: 'ritorno al futuro',
     cardList: [],
+    languageFlag: './../../public/language/en.jpg'
 });
