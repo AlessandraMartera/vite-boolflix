@@ -16,9 +16,15 @@ export default {
 </script>
 
 <template>
+    <h1>Movie:</h1>
     <ul>
         <CardItems v-for="(card, idx) in store.cardList" :key="idx" :details="card" />
     </ul>
+
+    <!-- <h1>TvSeries:</h1>
+        <ul>
+            <CardItems v-for="(card, idx) in store.cardList" :key="idx" :details="card" />
+        </ul> -->
 </template>
 
 <style lang="scss" scoped>

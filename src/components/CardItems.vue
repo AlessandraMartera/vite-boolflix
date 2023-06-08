@@ -21,18 +21,32 @@ export default {
 
 <template>
     <li>
-        <!-- title -->
-        <div>
-            {{ details.title }}
+        <div v-if="(store.movieList.includes(details))">
+            <!-- title -->
+            <div>
+                {{ details.title }}
+            </div>
+
+            <!-- original title -->
+            <div>
+                {{ details.original_title }}
+            </div>
         </div>
 
-        <!-- original title -->
-        <div>
-            {{ details.original_title }}
+        <div v-else-if="(store.tvList.includes(details))">
+            <!-- name -->
+            <div>
+                {{ details.name }}
+            </div>
+
+            <!-- original name -->
+            <div>
+                {{ details.original_name }}
+            </div>
         </div>
 
         <!-- language -->
-        <div class="language">
+        <div class=" language">
             <img :src="`./../../public/language/${details.original_language}.jpg`" :alt="details.original_language">
 
         </div>

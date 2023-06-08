@@ -7,6 +7,7 @@ export const store = reactive({
 
     // variables to search
     titleSearched: 'ritorno al futuro',
-    cardList: [],
-    languageFlag: './../../public/language/en.jpg'
+    movieList: [],
+    tvList: [],
+    cardList: []
 });

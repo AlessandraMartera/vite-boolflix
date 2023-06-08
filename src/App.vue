@@ -21,31 +21,41 @@ export default {
 
   // start methods
   methods: {
-    getInfoMovie() {
-      let searchUrlMovie = store.apiUrlMovie + store.titleSearched;
+    // getInfoMovie() {
 
-      // if (store.titleSearched != 0) {
-      //   searchUrlMovie += store.titleSearched;
-      // }
-      axios.get(searchUrlMovie)
-        .then(ref => {
-          store.cardList = ref.data.results;
-          console.log(store.cardList);
-        }
-        )
-    },
+
+    // },
     // getInfoTv() {
-    //   let searchUrlTv = store.apiUrlTv + store.titleSearched;
-    //   axios.get(searchUrlTv)
-    //     .then(ref => {
-    //       store.cardList.concat(ref.data.results);
-    //       console.log(store.cardList);
-    //     }
-    //     )
+
     // },
     getCards() {
-      this.getInfoMovie();
+      // this.getInfoMovie();
       // this.getInfoTv();
+
+      // Movie
+      let searchUrlMovie = store.apiUrlMovie + store.titleSearched;
+
+      axios.get(searchUrlMovie)
+        .then(ref => {
+          store.movieList = ref.data.results;
+          console.log(store.movieList);
+
+          // serieTv
+          let searchUrlTv = store.apiUrlTv + store.titleSearched;
+
+          axios.get(searchUrlTv)
+            .then(ref => {
+
+              store.tvList = ref.data.results;
+              console.log(store.tvList);
+
+              // unisco i due array
+              this.store.cardList = store.movieList.concat(store.tvList);
+              console.log(store.cardList);
+            }
+            );
+        }
+        );
     }
   },
   created() {
