@@ -18,7 +18,7 @@ export default {
 <template>
   <header>
     <h1>BoolFlix</h1>
-    <div>
+    <div id="search">
       <input type="text" v-model="store.titleSearched" @keyup.enter="$emit('search')">
       <button type="submit" @click.prevent="$emit('search')"> cerca </button>
     </div>
@@ -30,6 +30,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  background-color: black;
+  color: red;
+  height: 100px;
+  padding: 10px;
 }
 </style>
