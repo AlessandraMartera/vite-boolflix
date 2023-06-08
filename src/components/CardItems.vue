@@ -1,8 +1,12 @@
 <script>
 import { store } from './../store'
+import ratingsStars from './ratingsStars.vue'
 
 export default {
     name: 'CardItems',
+    components: {
+        ratingsStars
+    },
     props: {
         details: Object
     },
@@ -11,11 +15,6 @@ export default {
             store
         }
     },
-    methods: {
-        flagBuild() {
-
-        }
-    }
 }
 </script>
 
@@ -58,6 +57,7 @@ export default {
         <!-- vote -->
         <div class="ratings">
             {{ details.vote_average }}
+            <ratingsStars />
         </div>
 
     </li>
@@ -72,5 +72,13 @@ export default {
         width: 100%;
         height: 100%;
     }
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    display: block;
 }
 </style>

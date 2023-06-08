@@ -10,5 +10,6 @@ export const store = reactive({
     movieList: [],
     tvList: [],
     cardList: [],
-    thumbImg: 'https://image.tmdb.org/t/p/w342'
+    thumbImg: 'https://image.tmdb.org/t/p/w342',
+    voteStars: 0,
 });

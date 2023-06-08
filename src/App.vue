@@ -42,7 +42,7 @@ export default {
           // console.log(store.movieList);
           // cancat array movie end tv
           store.cardList = store.tvList.concat(store.movieList);
-          console.log(store.cardList);
+          // console.log(store.cardList);
         }
         );
 
@@ -55,13 +55,15 @@ export default {
           // console.log(store.tvList);
           // cancat array movie end tv
           store.cardList = store.movieList.concat(store.tvList);
-          console.log(store.cardList);
+          // console.log(store.cardList);
         }
         );
-    }
+    },
+
   },
   created() {
     this.getCards();
+
   }
 }
 </script>
