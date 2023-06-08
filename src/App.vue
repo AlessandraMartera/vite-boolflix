@@ -50,7 +50,7 @@ export default {
               console.log(store.tvList);
 
               // unisco i due array
-              this.store.cardList = store.movieList.concat(store.tvList);
+              store.cardList = store.movieList.concat(store.tvList);
               console.log(store.cardList);
             }
             );
