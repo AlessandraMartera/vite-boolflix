@@ -11,5 +11,5 @@ export const store = reactive({
     tvList: [],
     cardList: [],
     thumbImg: 'https://image.tmdb.org/t/p/w342',
-    voteStars: 0,
+    voteStars: 0
 });
