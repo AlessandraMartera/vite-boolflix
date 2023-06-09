@@ -22,33 +22,20 @@ export default {
 
   // start methods
   methods: {
-    // getInfoMovie() {
-
-
-    // },
-    // getInfoTv() {
-
-    // },
     getCards() {
-      // this.getInfoMovie();
-      // this.getInfoTv();
-
       // Movie
       let searchUrlMovie = store.apiUrlMovie + store.titleSearched;
 
       axios.get(searchUrlMovie)
         .then(ref => {
           store.movieList = ref.data.results;
-          // console.log(store.movieList);
           // cancat array movie end tv
           store.cardList = store.tvList.concat(store.movieList);
           // console.log(store.cardList);
         }
         );
-
       // serieTv
       let searchUrlTv = store.apiUrlTv + store.titleSearched;
-
       axios.get(searchUrlTv)
         .then(ref => {
           store.tvList = ref.data.results;
@@ -63,7 +50,6 @@ export default {
   },
   created() {
     this.getCards();
-
   }
 }
 </script>
@@ -71,7 +57,6 @@ export default {
 <template>
   <AppHeader @search="getCards" />
   <main>
-
     <CardList />
   </main>
 </template>

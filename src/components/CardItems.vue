@@ -53,12 +53,10 @@ export default {
             <img :src="`language/${details.original_language}.jpg`" :alt="`${details.original_language} language`">
 
         </div>
-        <!-- ${details.original_language} -->
+
         <!-- vote -->
         <div class="ratings">
-            {{ details.vote_average }}
             <ratingsStars v-for="(n, idx) in 5" :vote="details.vote_average" :pos="idx" />
-
         </div>
 
     </li>
