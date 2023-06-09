@@ -4,7 +4,13 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #545454;
+}
+
 ul {
+    width: 80%;
+    margin: 20px auto;
     list-style: none;
     display: flex;
     gap: 10px;
